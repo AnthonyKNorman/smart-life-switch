@@ -1,0 +1,77 @@
+esphome:
+  name: dual_wall_switch_1
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: "FARLEIGH"
+  password: "MK4Lxq7aiuuU"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Dual Wall Switch 1"
+    password: "s2sfilwY"
+
+captive_portal:
+
+# Enable logging
+logger:
+  baud_rate: 0
+  
+# Enable Home Assistant API
+api:
+  password: "s2sfilwY"
+
+ota:
+  password: "s2sfilwY"
+
+binary_sensor:
+  - platform: gpio
+    pin: 3
+    name: "dual wall switch 1 left button"
+  - platform: gpio
+    pin: 5
+    name: "dual wall switch 1 right button"
+
+switch:    
+  - platform: gpio
+    pin: 13
+    name: "Dual Switch 1 1"
+
+  - platform: gpio
+    pin: 4
+    name: "Dual Switch 1 2"
+
+output:
+  - platform: esp8266_pwm
+    pin: 0
+    frequency: 1000 Hz
+    id: wifi_led
+    inverted: true
+    
+  - platform: esp8266_pwm
+    pin: 1
+    frequency: 1000 Hz
+    id: blue_right
+    inverted: true
+    
+  - platform: esp8266_pwm
+    pin: 14
+    frequency: 1000 Hz
+    id: blue_left
+    inverted: true
+
+light:
+  - platform: monochromatic
+    name: "Dual Switch 1 LEFT_LED"
+    output: blue_left
+
+  - platform: monochromatic
+    name: "Dual Switch 1 RIGHT_LED"
+    output: blue_right
+
+  - platform: monochromatic
+    name: "Dual Switch 1 WIFI_LED"
+    output: wifi_led
+      
+    
