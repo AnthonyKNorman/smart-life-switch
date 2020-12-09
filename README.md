@@ -1,2 +1,2 @@
 # smart-life-switch
-Re-flashing as Smart Life Switch with ESPHome for Home Assistant
+Re-flashing a Smart Life Switch with ESPHome for Home Assistant
