@@ -1,30 +1,7 @@
-esphome:
-  name: dual_wall_switch_1
-  platform: ESP8266
-  board: esp01_1m
-
-wifi:
-  ssid: "FARLEIGH"
-  password: "MK4Lxq7aiuuU"
-
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "Dual Wall Switch 1"
-    password: "s2sfilwY"
-
-captive_portal:
-
 # Enable logging
 logger:
-  baud_rate: 0
+  baud_rate: 0  # required to switch off logging via the uart so that we can use pins 1 and 3
   
-# Enable Home Assistant API
-api:
-  password: "s2sfilwY"
-
-ota:
-  password: "s2sfilwY"
-
 binary_sensor:
   - platform: gpio
     pin: 3
