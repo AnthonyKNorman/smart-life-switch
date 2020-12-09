@@ -4,5 +4,6 @@ The aim with all of my smart home devices is to use only my internal cloud to pr
 
 <p align="center">
   <img width="200" src="resources/IMG_0263.jpg">
+  <img width="200" src="resources/IMG_0264.jpg">
 </p>
 
