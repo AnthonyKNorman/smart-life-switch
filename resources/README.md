@@ -1,1 +1,1 @@
-Here is where we stroe the images
+Here is where we store the images
